@@ -16,5 +16,10 @@ namespace tpCuatrimestral_Winforms_Varela_Licla
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
