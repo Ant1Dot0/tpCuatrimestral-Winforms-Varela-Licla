@@ -1,0 +1,10 @@
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\tpCuatrimestral-Winforms-Varela-Licla\bin\Debug\tpCuatrimestral-Winforms-Varela-Licla.exe.config
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\tpCuatrimestral-Winforms-Varela-Licla\bin\Debug\tpCuatrimestral-Winforms-Varela-Licla.exe
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\tpCuatrimestral-Winforms-Varela-Licla\bin\Debug\tpCuatrimestral-Winforms-Varela-Licla.pdb
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\tpCuatrimestral-Winforms-Varela-Licla\obj\Debug\tpCuatrimestral-Winforms-Varela-Licla.csproj.AssemblyReference.cache
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\tpCuatrimestral-Winforms-Varela-Licla\obj\Debug\tpCuatrimestral_Winforms_Varela_Licla.Form1.resources
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\tpCuatrimestral-Winforms-Varela-Licla\obj\Debug\tpCuatrimestral_Winforms_Varela_Licla.Properties.Resources.resources
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\tpCuatrimestral-Winforms-Varela-Licla\obj\Debug\tpCuatrimestral-Winforms-Varela-Licla.csproj.GenerateResource.cache
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\tpCuatrimestral-Winforms-Varela-Licla\obj\Debug\tpCuatrimestral-Winforms-Varela-Licla.csproj.CoreCompileInputs.cache
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\tpCuatrimestral-Winforms-Varela-Licla\obj\Debug\tpCuatrimestral-Winforms-Varela-Licla.exe
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\tpCuatrimestral-Winforms-Varela-Licla\obj\Debug\tpCuatrimestral-Winforms-Varela-Licla.pdb

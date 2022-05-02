@@ -21,5 +21,15 @@ namespace tpCuatrimestral_Winforms_Varela_Licla
         {
 
         }
+
+        private void bajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void articuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
