@@ -15,13 +15,14 @@ namespace dominio
         public Marca marca { get; set; }
         public Categoria categoria { get; set; }
         public string imagenUrl { get; set; }
-        float precio { get; set; }
+        public float precio { get; set; }
 
         public Articulo()
         {
             marca = new Marca();
             categoria = new Categoria();
         }
+        
     }
 
  
