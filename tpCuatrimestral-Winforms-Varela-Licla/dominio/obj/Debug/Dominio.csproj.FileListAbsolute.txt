@@ -1,0 +1,6 @@
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\dominio\bin\Debug\dominio.dll
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\dominio\bin\Debug\dominio.pdb
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\dominio\obj\Debug\dominio.dll
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\dominio\obj\Debug\dominio.pdb

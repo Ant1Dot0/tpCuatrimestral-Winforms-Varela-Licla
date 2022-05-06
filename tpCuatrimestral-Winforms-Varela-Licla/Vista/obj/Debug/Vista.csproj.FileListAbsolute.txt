@@ -1,0 +1,9 @@
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\bin\Debug\Vista.exe.config
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\bin\Debug\Vista.exe
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\bin\Debug\Vista.pdb
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.Properties.Resources.resources
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.exe
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.pdb
