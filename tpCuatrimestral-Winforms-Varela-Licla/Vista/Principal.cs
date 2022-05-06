@@ -21,5 +21,23 @@ namespace Vista
         {
 
         }
+
+        private void listadoDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListar listar = new FormListar();
+            listar.ShowDialog();
+        }
+
+        private void verDetalleDeArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDetalle detalle = new FormDetalle();
+            detalle.ShowDialog();
+        }
+
+        private void buscarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBuscar buscar = new FormBuscar();
+            buscar.ShowDialog();
+        }
     }
 }

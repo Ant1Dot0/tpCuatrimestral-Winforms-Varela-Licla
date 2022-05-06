@@ -7,3 +7,7 @@ C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\De
 C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
 C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.exe
 C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.pdb
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.FormListar.resources
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.Principal.resources
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.FormBuscar.resources
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.FormDetalle.resources

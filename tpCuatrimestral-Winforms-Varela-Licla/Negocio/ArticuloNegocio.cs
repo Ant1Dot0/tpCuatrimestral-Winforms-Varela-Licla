@@ -52,5 +52,13 @@ namespace Negocio
 
 
         }
+
+      /*  public List<Articulo> listado()
+        {
+           // List <Articulo> lista = new List<Articulo>
+            return lista;
+        }*/
     }
+
+        
 }

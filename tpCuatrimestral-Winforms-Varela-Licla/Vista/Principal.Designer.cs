@@ -96,18 +96,21 @@ namespace Vista
             this.listadoDeArticulosToolStripMenuItem.Name = "listadoDeArticulosToolStripMenuItem";
             this.listadoDeArticulosToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.listadoDeArticulosToolStripMenuItem.Text = "Listado de articulos";
+            this.listadoDeArticulosToolStripMenuItem.Click += new System.EventHandler(this.listadoDeArticulosToolStripMenuItem_Click);
             // 
             // verDetalleDeArticuloToolStripMenuItem
             // 
             this.verDetalleDeArticuloToolStripMenuItem.Name = "verDetalleDeArticuloToolStripMenuItem";
             this.verDetalleDeArticuloToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.verDetalleDeArticuloToolStripMenuItem.Text = "Ver detalle de articulo";
+            this.verDetalleDeArticuloToolStripMenuItem.Click += new System.EventHandler(this.verDetalleDeArticuloToolStripMenuItem_Click);
             // 
             // buscarArticuloToolStripMenuItem
             // 
             this.buscarArticuloToolStripMenuItem.Name = "buscarArticuloToolStripMenuItem";
             this.buscarArticuloToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.buscarArticuloToolStripMenuItem.Text = "Buscar articulo";
+            this.buscarArticuloToolStripMenuItem.Click += new System.EventHandler(this.buscarArticuloToolStripMenuItem_Click);
             // 
             // Principal
             // 
