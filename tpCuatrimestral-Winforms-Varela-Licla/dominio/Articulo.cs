@@ -16,5 +16,13 @@ namespace dominio
         public Categoria categoria { get; set; }
         public string imagenUrl { get; set; }
         float precio { get; set; }
+
+        public Articulo()
+        {
+            marca = new Marca();
+            categoria = new Categoria();
+        }
     }
+
+ 
 }
