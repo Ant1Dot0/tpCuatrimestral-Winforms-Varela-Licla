@@ -13,7 +13,7 @@ namespace dominio
 
         public override string ToString()
         {
-            return descripcion + "pru3"+"PRUEBA2";
+            return descripcion + "pru"+"otrapruebamas";
 
         }
 
