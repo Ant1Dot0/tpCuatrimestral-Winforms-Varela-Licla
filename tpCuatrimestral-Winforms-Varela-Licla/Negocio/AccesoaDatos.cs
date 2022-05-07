@@ -8,8 +8,8 @@ using System.Data.SqlClient;
 
 namespace Negocio
 {
-
-        public class AccesoDatos
+   
+        public class AccesoaDatos
         {
             private SqlConnection conexion;
             private SqlCommand comando;
@@ -19,7 +19,7 @@ namespace Negocio
                 get { return lector; }
             }
 
-            public AccesoDatos()
+            public AccesoaDatos()
             {
                 conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true");
                 comando = new SqlCommand();
@@ -59,10 +59,10 @@ namespace Negocio
                 }
             }
 
-            public void setearParametro(string nombre, object valor)
+           /* public void setearParametro(string nombre, object valor)
             {
                 comando.Parameters.AddWithValue(nombre, valor);
-            }
+            }*/
 
             public void cerrarConexion()
             {

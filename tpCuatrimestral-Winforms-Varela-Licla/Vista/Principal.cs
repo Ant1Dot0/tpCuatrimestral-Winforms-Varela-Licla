@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
+using Negocio;
+
 
 namespace Vista
 {
@@ -38,6 +41,12 @@ namespace Vista
         {
             FormBuscar buscar = new FormBuscar();
             buscar.ShowDialog();
+        }
+
+        private void tESTMOSTRARDATOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           FormTestAllArticles MostrarArticulos = new FormTestAllArticles();   
+            MostrarArticulos.ShowDialog();  
         }
     }
 }
