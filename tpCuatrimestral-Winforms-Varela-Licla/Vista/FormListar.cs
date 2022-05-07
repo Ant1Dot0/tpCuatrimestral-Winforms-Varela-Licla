@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
 
 namespace Vista
 {
@@ -15,6 +16,12 @@ namespace Vista
         public FormListar()
         {
             InitializeComponent();
+        }
+
+        private void FormListar_Load(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            dgvArticulos.DataSource = negocio.listado();
         }
     }
 }

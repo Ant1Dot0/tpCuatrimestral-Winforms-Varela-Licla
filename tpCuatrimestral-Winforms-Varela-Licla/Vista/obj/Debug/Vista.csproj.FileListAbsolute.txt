@@ -31,3 +31,9 @@ C:\Repository\Programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\bin\D
 C:\Repository\Programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\bin\Debug\Negocio.pdb
 C:\Repository\Programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.csproj.CopyComplete
 C:\Repository\Programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.FormTestAllArticles.resources
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\bin\Debug\dominio.dll
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\bin\Debug\Negocio.dll
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\bin\Debug\dominio.pdb
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\bin\Debug\Negocio.pdb
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.FormTestAllArticles.resources
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Vista\obj\Debug\Vista.csproj.CopyComplete

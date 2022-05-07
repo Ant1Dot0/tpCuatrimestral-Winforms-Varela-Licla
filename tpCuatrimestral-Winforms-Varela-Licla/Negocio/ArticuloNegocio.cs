@@ -58,31 +58,41 @@ namespace Negocio
         public List<Articulo> listado()
         {
             List<Articulo> lista = new List<Articulo>();
-            AccesoDatos datos = new AccesoDatos();
+            AccesoaDatos datos = new AccesoaDatos();
 
             try
             {
-                datos.setearConsulta("SELECT a.id, a.Codigo,  a.Nombre, a.Descripcion, c.descripcion as categoria , m.descripcion as Marca, a.ImagenUrl, a.Precio" + 
+                datos.setearConsulta("SELECT a.Id as id, Codigo, Nombre, a.Descripcion dart, c.descripcion  categoria , m.descripcion  Marca, ImagenUrl, Precio " +
                     "from ARTICULOS a, CATEGORIAS c, MARCAS m where a.IdCategoria = c.Id and a.IdMarca = m.Id ");
 
                 datos.ejecutarLectura();
 
-                while(datos.Lector.Read())
+                while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.id = (int)datos.Lector["a.id"];
-                    aux.codigo = (string)datos.Lector["a.Codigo"];
-                    aux.descripcion = (string)datos.Lector["a.Descripcion"];
-                    
+                    aux.id = (int)datos.Lector["id"];
+                    aux.codigo = (string)datos.Lector["Codigo"];
+                    aux.descripcion = (string)datos.Lector["dart"];
+                    aux.nombre = (string)datos.Lector["Nombre"];
+                    aux.categoria.descripcion = (string)datos.Lector["categoria"];
+                    aux.marca.descripcion = (string)datos.Lector["Marca"];
+                    aux.imagenUrl = (string)datos.Lector["ImagenUrl"];
+                    aux.precio = (decimal)datos.Lector["Precio"];
+
+                    lista.Add(aux);
                 }
+
+                return lista;
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
+            finally
+            {
+                datos.cerrarConexion();
+            }
             
-            return lista;
         }
     }
 

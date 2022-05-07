@@ -7,3 +7,12 @@ C:\Repository\Programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\bin
 C:\Repository\Programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Repository\Programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\obj\Debug\Negocio.dll
 C:\Repository\Programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\obj\Debug\Negocio.pdb
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\obj\Debug\Negocio.dll
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\obj\Debug\Negocio.pdb
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\bin\Debug\Negocio.dll
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\bin\Debug\Negocio.pdb
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\bin\Debug\dominio.dll
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\bin\Debug\dominio.pdb
+C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\obj\Debug\Negocio.csproj.CopyComplete

@@ -30,8 +30,8 @@ namespace Vista
         private void InitializeComponent()
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +46,11 @@ namespace Vista
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // StatusLabel
+            // 
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -53,11 +58,6 @@ namespace Vista
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.Size = new System.Drawing.Size(723, 314);
             this.dgvArticulos.TabIndex = 1;
-            // 
-            // StatusLabel
-            // 
-            this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // FormListar
             // 
@@ -68,6 +68,7 @@ namespace Vista
             this.Controls.Add(this.statusStrip1);
             this.Name = "FormListar";
             this.Text = "Listado de articulos";
+            this.Load += new System.EventHandler(this.FormListar_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
