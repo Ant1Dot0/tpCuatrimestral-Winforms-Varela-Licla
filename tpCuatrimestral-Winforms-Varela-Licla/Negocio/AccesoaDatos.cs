@@ -8,8 +8,7 @@ using System.Data.SqlClient;
 
 namespace Negocio
 {
-    internal class Acceso_a_datos
-    {
+
         public class AccesoDatos
         {
             private SqlConnection conexion;
@@ -73,7 +72,7 @@ namespace Negocio
             }
 
         }
-    }
+}
 
-}
-}
+
+

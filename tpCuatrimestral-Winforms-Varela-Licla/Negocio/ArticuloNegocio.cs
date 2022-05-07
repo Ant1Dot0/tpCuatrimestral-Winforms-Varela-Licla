@@ -53,11 +53,35 @@ namespace Negocio
 
         }
 
-      /*  public List<Articulo> listado()
+        public List<Articulo> listado()
         {
-           // List <Articulo> lista = new List<Articulo>
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("SELECT a.id, a.Codigo,  a.Nombre, a.Descripcion, c.descripcion as categoria , m.descripcion as Marca, a.ImagenUrl, a.Precio" + 
+                    "from ARTICULOS a, CATEGORIAS c, MARCAS m where a.IdCategoria = c.Id and a.IdMarca = m.Id ");
+
+                datos.ejecutarLectura();
+
+                while(datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.id = (int)datos.Lector["a.id"];
+                    aux.codigo = (string)datos.Lector["a.Codigo"];
+                    aux.descripcion = (string)datos.Lector["a.Descripcion"];
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
             return lista;
-        }*/
+        }
     }
 
         
