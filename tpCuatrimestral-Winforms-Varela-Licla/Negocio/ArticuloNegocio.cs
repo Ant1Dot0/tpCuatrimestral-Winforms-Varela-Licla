@@ -107,7 +107,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("Insert into ARTICULOS ( Codigo, Nombre, Descripcion,ImagenUrl, precio) values (" +nuevo.codigo+ "'','','','',0) ");
+                datos.setearConsulta("Insert into ARTICULOS ( Codigo, Nombre, Descripcion,ImagenUrl, precio) values (" +nuevo.codigo+ ",'"+ nuevo.nombre+"','"+ nuevo.descripcion + "','" + nuevo.imagenUrl + "','" + nuevo.precio + "') ");
                 datos.ejecutarAccion();
 
             

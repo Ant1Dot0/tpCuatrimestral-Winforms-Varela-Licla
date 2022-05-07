@@ -34,7 +34,9 @@ namespace Vista
                 nuevoArt.codigo = txtCodeArt.Text;
                 nuevoArt.nombre = TxtNameArt.Text;
                 nuevoArt.descripcion = TxtDesc.Text;
-                nuevoArt.imagenUrl = TxtImagenUrl.Text;  
+                nuevoArt.imagenUrl = TxtImagenUrl.Text;
+                nuevoArt.marca = (Marca)CboMarca.SelectedItem;
+                nuevoArt.categoria= (Categoria)CboCategoria.SelectedItem;
                 nuevoArt.precio = decimal.Parse(txtPrecio.Text);
 
                 negocio.agregar(nuevoArt); //aca esta la logica
@@ -51,17 +53,31 @@ namespace Vista
         private void FormAgregar_Load(object sender, EventArgs e)
         {
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+             
 
             try
             {
                 CboCategoria.DataSource = categoriaNegocio.listar();
-               // CboMarca = categoriaNegocio.listar();
-            }
+                           }
             catch (Exception ex)
             {
 
                 throw;
             }
+
+
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            try
+            {
+                CboMarca.DataSource = marcaNegocio.listar();    
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
         }
     }
 }
