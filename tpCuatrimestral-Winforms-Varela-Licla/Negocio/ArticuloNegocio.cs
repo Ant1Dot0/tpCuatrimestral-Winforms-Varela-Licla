@@ -23,6 +23,7 @@ namespace Negocio
             {
                 conexion.ConnectionString= "server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT codigo, nombre FROM ARTICULOS";
                 comando.Connection = conexion;
 
                 conexion.Open();    
@@ -32,15 +33,16 @@ namespace Negocio
                     Articulo aux = new Articulo();
                     aux.codigo = (string)lector["codigo"];
                     aux.nombre = (string)lector["nombre"];
-                    aux.descripcion = (string)lector["descripcion"];
-                   
-                    if (!(lector["imagenUrl"] is DBNull))
-                        aux.imagenUrl = (string)lector["imagenUrl"];
-                    aux.precio = (float)lector["precio"];
-                    
+                    //  aux.descripcion = (string)lector["descripcion"];
 
+                    //  if (!(lector["imagenUrl"] is DBNull))
+                    //      aux.imagenUrl = (string)lector["imagenUrl"];
+                    //  aux.precio = (float)lector["precio"];
+
+                    lista.Add(aux);
 
                 }
+
                 conexion.Close();
                 return lista;
             }

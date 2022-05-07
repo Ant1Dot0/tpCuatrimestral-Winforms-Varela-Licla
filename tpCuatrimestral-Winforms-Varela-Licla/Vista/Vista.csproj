@@ -64,6 +64,12 @@
     <Compile Include="FormListar.Designer.cs">
       <DependentUpon>FormListar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTestAllArticles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTestAllArticles.Designer.cs">
+      <DependentUpon>FormTestAllArticles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormListar.resx">
       <DependentUpon>FormListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTestAllArticles.resx">
+      <DependentUpon>FormTestAllArticles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -105,6 +114,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dominio\Dominio.csproj">
+      <Project>{855d67ca-a13e-404d-9e60-f8f3d76dfe2d}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{abaceef9-9718-4e71-af32-173b21997f11}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
