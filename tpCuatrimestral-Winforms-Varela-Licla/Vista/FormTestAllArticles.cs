@@ -58,7 +58,12 @@ namespace Vista
             }
         }
 
-
+        private void FormTestAllArticles_Load(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            listaArticulos = negocio.listar();
+            DGVAllArticles.DataSource = listaArticulos;
+        }
     }
 }
 
