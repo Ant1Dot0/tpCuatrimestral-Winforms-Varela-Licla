@@ -69,6 +69,7 @@ namespace Vista
             this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
             this.altaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.altaToolStripMenuItem.Text = "Agregar Articulo";
+            this.altaToolStripMenuItem.Click += new System.EventHandler(this.altaToolStripMenuItem_Click);
             // 
             // eliminarArtículoToolStripMenuItem
             // 
@@ -129,7 +130,7 @@ namespace Vista
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Principal";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
