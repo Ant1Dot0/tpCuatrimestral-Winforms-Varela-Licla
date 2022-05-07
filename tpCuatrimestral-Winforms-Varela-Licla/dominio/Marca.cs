@@ -8,12 +8,12 @@ namespace dominio
 {
     public class Marca
     {
-       // public int id { get; set; }
+        public int id { get; set; }
         public string descripcion { get; set; }
 
         public override string ToString()
         {
-            return descripcion + "pru"+"otrapruebamas";
+            return descripcion + "Otrapruebafinal"+"otrapruebamas";
 
         }
 
