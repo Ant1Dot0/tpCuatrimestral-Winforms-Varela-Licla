@@ -79,5 +79,22 @@ namespace Vista
 
 
         }
+
+        private void cargarImagen(string imagen) //si la imagen falla entonces muestra imagen x defecto
+        {
+            try
+            {
+                PbxImagen.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                PbxImagen.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
+
+        private void TxtImagenUrl_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(TxtImagenUrl.Text);
+        }
     }
 }
