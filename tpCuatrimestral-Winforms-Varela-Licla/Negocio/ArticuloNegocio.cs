@@ -231,6 +231,13 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+
+        public List<Articulo> buscarPorCriterio()
+        {
+            List<Articulo> lista = new List<Articulo>();
+
+            return lista;
+        }
     }
 
 
