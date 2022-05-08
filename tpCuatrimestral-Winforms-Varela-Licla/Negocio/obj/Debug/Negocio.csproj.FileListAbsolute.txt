@@ -15,4 +15,3 @@ C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\bin\
 C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\bin\Debug\Negocio.pdb
 C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\bin\Debug\dominio.dll
 C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\bin\Debug\dominio.pdb
-C:\proyectos\programacion III\tpCuatrimestral-Winforms-Varela-Licla\Negocio\obj\Debug\Negocio.csproj.CopyComplete

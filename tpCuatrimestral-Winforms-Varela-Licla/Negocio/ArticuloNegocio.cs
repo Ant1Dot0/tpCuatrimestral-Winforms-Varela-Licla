@@ -94,7 +94,48 @@ namespace Negocio
             }
             
         }
+
+        public Articulo buscarArtCodigo(string codigo)// Si no encuentra la búsqueda, devuelve id = -1
+        {
+            Articulo aux = new Articulo();
+            AccesoaDatos datos = new AccesoaDatos();
+            try
+            {
+                datos.setearConsulta("select Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio " +
+                "FROM ARTICULOS where codigo = " + "'" + codigo + "'");
+
+                datos.ejecutarLectura();
+                if (datos.Lector.Read())
+                {
+                    aux.id = (int)datos.Lector["Id"];
+                    aux.codigo = (string)datos.Lector["Codigo"];
+                    aux.nombre = (string)datos.Lector["Nombre"];
+                    aux.descripcion = (string)datos.Lector["Descripcion"];
+                    aux.marca.id = (int)datos.Lector["IdMarca"];
+                    aux.categoria.id = (int)datos.Lector["IdCategoria"];
+                    aux.imagenUrl = (string)datos.Lector["ImagenUrl"];
+                    aux.precio = (decimal)datos.Lector["Precio"];
+                }
+                else
+                {
+                    aux.id = -1;
+                }
+
+                return aux;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
+
+
 
         
 }
