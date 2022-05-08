@@ -236,10 +236,94 @@ namespace Negocio
             }
         }
 
-        public List<Articulo> buscarPorCriterio()
+        public List<Articulo> buscarPorCriterio(string campo, string criterio, string filtro)
         {
             List<Articulo> lista = new List<Articulo>();
+            AccesoaDatos datos = new AccesoaDatos();
+           
+            string consulta = "SELECT a.Id as id, Codigo, Nombre, a.Descripcion Dart, c.descripcion  Categoria , m.descripcion  Marca, ImagenUrl, Precio " +
+                    "from ARTICULOS a, CATEGORIAS c, MARCAS m where a.IdCategoria = c.Id and a.IdMarca = m.Id AND ";
+            try
+            {
+                if (campo == "Precio")
+                {
+                    switch (criterio)
+                    {
+                        case "Mayor a":
+                            consulta += " Precio > " + filtro;
+                            break;
 
+                        case "Menor a":
+                            consulta += " Precio < " + filtro;
+                            break;
+
+                        case "Igual a":
+                            consulta += " Precio = " + filtro;
+                            break;
+
+                    }
+                    
+
+                }
+                else if(campo == "Descripcion")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta +=   "a.Descripcion like '" + filtro + "%'";
+                            break;
+
+                        case "Termina con":
+                            consulta +=   "a.Descripcion like '%" + filtro + "'";
+                            break;
+
+                        case "Contiene":
+                            consulta +=   "a.Descripcion like'%" + filtro + "%'";
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consulta += campo + " like '" + filtro + "%'";
+                            break;
+
+                        case "Termina con":
+                            consulta += campo + " like '%" + filtro + "'";
+                            break;
+
+                        case "Contiene":
+                            consulta += campo + " like '%" + filtro + "%'";
+                            break;
+                    }
+                }
+
+
+                datos.setearConsulta(consulta);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.id = (int)datos.Lector["id"];
+                    aux.codigo = (string)datos.Lector["Codigo"];
+                    aux.descripcion = (string)datos.Lector["Dart"];
+                    aux.nombre = (string)datos.Lector["Nombre"];
+                    aux.categoria.descripcion = (string)datos.Lector["Categoria"];
+                    aux.marca.descripcion = (string)datos.Lector["Marca"];
+                    aux.imagenUrl = (string)datos.Lector["ImagenUrl"];
+                    aux.precio = (decimal)datos.Lector["Precio"];
+
+                    lista.Add(aux);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             return lista;
         }
     }
