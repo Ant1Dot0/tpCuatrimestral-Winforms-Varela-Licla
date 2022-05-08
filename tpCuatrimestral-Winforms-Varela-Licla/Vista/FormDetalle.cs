@@ -25,13 +25,27 @@ namespace Vista
             Articulo articulo = new Articulo();
             articulo = negocio.buscarArtCodigo(txbCodigo.Text);
 
-            
-            txbNombre.Text = articulo.nombre;
-            txbDescripcion.Text = articulo.descripcion;
-            txbMarca.Text = articulo.marca.id.ToString();
-            txbCategoria.Text =  articulo.categoria.id.ToString();
-            txbPrecio.Text = articulo.precio.ToString();
+            txtCodigo.Text = articulo.codigo;
+            txtNombre.Text = articulo.nombre;
+            txtDescripcion.Text = articulo.descripcion; 
+            txtCategoria.Text = "" + articulo.categoria;
+            txtMarca.Text = "" + articulo.marca;
+            txtPrecio.Text = "" + articulo.precio;
 
+            cargarImagen(articulo.imagenUrl);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                pbxArticulo.Load("https://educacionprivada.org/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png");
+            }
         }
     }
 }

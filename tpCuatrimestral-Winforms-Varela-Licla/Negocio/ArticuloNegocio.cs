@@ -199,18 +199,22 @@ namespace Negocio
             AccesoaDatos datos = new AccesoaDatos();
             try
             {
-                datos.setearConsulta("select Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio " +
-                "FROM ARTICULOS where codigo = " + "'" + codigo + "'");
+                datos.setearConsulta("SELECT a.Id as id, Codigo, Nombre, a.Descripcion dart, c.Id IdCategoria, c.descripcion  categoria ,m.Id IdMarca, m.descripcion  Marca, ImagenUrl, Precio " +
+                    "from ARTICULOS a, CATEGORIAS c, MARCAS m where a.IdCategoria = c.Id and a.IdMarca = m.Id AND codigo =" + "'" + codigo + "'");
+               /* datos.setearConsulta("select Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria c.descripcion, ImagenUrl, Precio " +
+                "FROM ARTICULOS where codigo = " + "'" + codigo + "'");*/
 
                 datos.ejecutarLectura();
                 if (datos.Lector.Read())
                 {
-                    aux.id = (int)datos.Lector["Id"];
+                    aux.id = (int)datos.Lector["id"];
                     aux.codigo = (string)datos.Lector["Codigo"];
                     aux.nombre = (string)datos.Lector["Nombre"];
-                    aux.descripcion = (string)datos.Lector["Descripcion"];
+                    aux.descripcion = (string)datos.Lector["dart"];
                     aux.marca.id = (int)datos.Lector["IdMarca"];
+                    aux.marca.descripcion = (string)datos.Lector["Marca"];
                     aux.categoria.id = (int)datos.Lector["IdCategoria"];
+                    aux.categoria.descripcion = (string)datos.Lector["categoria"];
                     aux.imagenUrl = (string)datos.Lector["ImagenUrl"];
                     aux.precio = (decimal)datos.Lector["Precio"];
                 }
