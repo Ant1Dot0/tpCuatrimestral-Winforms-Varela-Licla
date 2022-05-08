@@ -23,8 +23,7 @@ namespace Negocio
             {
                 conexion.ConnectionString= "server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT a.Id as id, Codigo, Nombre, a.Descripcion dart, c.descripcion  categoria , m.descripcion  Marca, ImagenUrl, Precio " +
-                    "from ARTICULOS a, CATEGORIAS c, MARCAS m where a.IdCategoria = c.Id and a.IdMarca = m.Id";
+                comando.CommandText = "SELECT a.Id as id, Codigo, Nombre, a.Descripcion dart, c.descripcion  categoria , m.descripcion  Marca, ImagenUrl, Precio, c.Id IdCategoria, m.Id IdMarca from ARTICULOS a, CATEGORIAS c, MARCAS m where a.IdCategoria = c.Id and a.IdMarca = m.Id";
                 comando.Connection = conexion;
 
                 conexion.Open();    
@@ -37,13 +36,20 @@ namespace Negocio
                     aux.codigo = (string)lector["Codigo"];
                     aux.descripcion = (string)lector["dart"];
                     aux.nombre = (string)lector["Nombre"];
-                    aux.categoria.descripcion = (string)lector["categoria"];
-                    aux.marca.descripcion = (string)lector["Marca"];
+                    
+                  
 
                     if (!(lector["imagenUrl"] is DBNull))  // control de nulidad
                     aux.imagenUrl = (string)lector["imagenUrl"];
-                    
                     aux.precio = (decimal)lector["precio"];
+
+                    aux.categoria = new Categoria();
+                    aux.categoria.id = (int)lector["IdCategoria"];
+                    aux.categoria.descripcion = (string)lector["categoria"];
+
+                    aux.marca = new Marca();   
+                    aux.marca.id = (int)lector["IdMarca"];
+                    aux.marca.descripcion = (string)lector["Marca"];
 
                     lista.Add(aux);
 

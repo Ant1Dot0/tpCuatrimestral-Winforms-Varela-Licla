@@ -14,9 +14,17 @@ namespace Vista
 {
     public partial class FormAgregar : Form
     {
+        private Articulo articulo = null; 
+
         public FormAgregar()
         {
             InitializeComponent();
+        }
+
+        public FormAgregar(Articulo articulo) // constructor de modificar
+        {
+            InitializeComponent();
+            this.articulo = articulo;   // pasamanos entre ventanas
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -35,7 +43,7 @@ namespace Vista
                 nuevoArt.nombre = TxtNameArt.Text;
                 nuevoArt.descripcion = TxtDesc.Text;
                 nuevoArt.imagenUrl = TxtImagenUrl.Text;
-                nuevoArt.marca = (Marca)CboMarca.SelectedItem;
+                nuevoArt.marca = (Marca)CboMarca.SelectedItem;//aca capturo el obj completo
                 nuevoArt.categoria= (Categoria)CboCategoria.SelectedItem;
                 nuevoArt.precio = decimal.Parse(txtPrecio.Text);
 
@@ -53,12 +61,24 @@ namespace Vista
         private void FormAgregar_Load(object sender, EventArgs e)
         {
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
-             
-
             try
             {
                 CboCategoria.DataSource = categoriaNegocio.listar();
-                           }
+                CboCategoria.ValueMember = "id"; //valor clave
+                CboCategoria.DisplayMember = "descripcion"; //propiedad de obj 
+                
+                if(articulo!=null) // si true esta modificando. Precargo datos de modificar
+                {
+                    txtCodeArt.Text = articulo.codigo;
+                    TxtNameArt.Text = articulo.nombre;
+                    TxtDesc.Text = articulo.descripcion;
+                    TxtImagenUrl.Text = articulo.imagenUrl;
+                    cargarImagen(articulo.imagenUrl);// precarga dato url del elemento seleccionado
+                    CboCategoria.SelectedValue = articulo.categoria.id; // con esto preseleccion el Combobox
+                   
+                }
+            
+            }
             catch (Exception ex)
             {
 
@@ -69,7 +89,20 @@ namespace Vista
             MarcaNegocio marcaNegocio = new MarcaNegocio();
             try
             {
-                CboMarca.DataSource = marcaNegocio.listar();    
+                CboMarca.DataSource = marcaNegocio.listar();
+                CboMarca.ValueMember = "id";
+                CboMarca.DisplayMember = "descripcion";
+
+                if (articulo != null) // si true esta modificando. Precargo datos de modificar
+                {
+                    txtCodeArt.Text = articulo.codigo;
+                    TxtNameArt.Text = articulo.nombre;
+                    TxtDesc.Text = articulo.descripcion;
+                    TxtImagenUrl.Text = articulo.imagenUrl;
+                    cargarImagen(articulo.imagenUrl);// precarga dato url del elemento seleccionado
+                    CboMarca.SelectedValue=articulo.marca.id;   
+
+                }
             }
             catch (Exception)
             {

@@ -67,7 +67,8 @@ namespace Vista
             {
                 listaArticulos = negocio.listar();
                 DGVAllArticles.DataSource = listaArticulos; //cargo la grilla
-                //DGVAllArticles.Columns["imageUrl"].Visible=false;
+                DGVAllArticles.Columns["id"].Visible=false;
+                //DGVAllArticles.Columns["imagenUrl"].Visible = false;
                 cargarImagen(listaArticulos[0].imagenUrl);
 
             }
@@ -88,10 +89,10 @@ namespace Vista
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             Articulo seleccionado;
-            seleccionado = (Articulo)DGVAllArticles.CurrentRow.DataBoundItem;
+            seleccionado = (Articulo)DGVAllArticles.CurrentRow.DataBoundItem; //selecciono el registro
 
-            FormAgregar agregar = new FormAgregar();
-            agregar.ShowDialog();
+            FormAgregar modificar = new FormAgregar(seleccionado); // le paso el reg. seleccionado al constructor
+            modificar.ShowDialog();
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
