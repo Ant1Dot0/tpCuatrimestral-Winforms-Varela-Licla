@@ -25,6 +25,7 @@ namespace Vista
         {
             InitializeComponent();
             this.articulo = articulo;   // pasamanos entre ventanas
+            Text = "Modificar Articulo";
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -34,21 +35,37 @@ namespace Vista
 
         private void BtnAceptar_Click(object sender, EventArgs e) // parte de front
         {
-            Articulo nuevoArt = new Articulo();   
+            //Articulo nuevoArt = new Articulo();   
             ArticuloNegocio negocio = new ArticuloNegocio();    
 
             try
-            {
-                nuevoArt.codigo = txtCodeArt.Text;
-                nuevoArt.nombre = TxtNameArt.Text;
-                nuevoArt.descripcion = TxtDesc.Text;
-                nuevoArt.imagenUrl = TxtImagenUrl.Text;
-                nuevoArt.marca = (Marca)CboMarca.SelectedItem;//aca capturo el obj completo
-                nuevoArt.categoria= (Categoria)CboCategoria.SelectedItem;
-                nuevoArt.precio = decimal.Parse(txtPrecio.Text);
+            {//precarga de elementos
+                if(articulo==null) //si apreta aceptar en el form y el art esta null estas por agregar uno nuevo
+                articulo = new Articulo();  
 
-                negocio.agregar(nuevoArt); //aca esta la logica
-                MessageBox.Show("Agregado exitosamente");
+                articulo.codigo = txtCodeArt.Text;
+                articulo.nombre = TxtNameArt.Text;
+                articulo.descripcion = TxtDesc.Text;
+                articulo.imagenUrl = TxtImagenUrl.Text;
+                articulo.marca = (Marca)CboMarca.SelectedItem;//aca capturo el obj completo
+                articulo.categoria= (Categoria)CboCategoria.SelectedItem;
+                articulo.precio = decimal.Parse(txtPrecio.Text);
+
+                if(articulo.id!=0) // si modifico tiene ID
+                {
+                    negocio.Modificar(articulo);
+                    MessageBox.Show("Agregado exitosamente");
+
+                }
+                else
+                {
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Agregado exitosamente");
+                }
+
+
+               
+
                 Close();    
             }
             catch (Exception ex)
@@ -75,7 +92,7 @@ namespace Vista
                     TxtImagenUrl.Text = articulo.imagenUrl;
                     cargarImagen(articulo.imagenUrl);// precarga dato url del elemento seleccionado
                     CboCategoria.SelectedValue = articulo.categoria.id; // con esto preseleccion el Combobox
-                   
+                    txtPrecio.Text = articulo.precio.ToString();
                 }
             
             }
@@ -100,7 +117,8 @@ namespace Vista
                     TxtDesc.Text = articulo.descripcion;
                     TxtImagenUrl.Text = articulo.imagenUrl;
                     cargarImagen(articulo.imagenUrl);// precarga dato url del elemento seleccionado
-                    CboMarca.SelectedValue=articulo.marca.id;   
+                    CboMarca.SelectedValue=articulo.marca.id;
+                    txtPrecio.Text = articulo.precio.ToString();
 
                 }
             }

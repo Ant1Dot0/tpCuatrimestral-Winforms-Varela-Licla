@@ -135,7 +135,46 @@ namespace Negocio
 
         }
 
-       
+        public void Modificar(Articulo ArtChange)
+        {
+            AccesoaDatos datos = new AccesoaDatos();
+
+            try
+            {
+                datos.setearConsulta("update ARTICULOS set Codigo=@codigo,Nombre=@nombre,Descripcion=@descripcion, IdCategoria=@IdCat,IdMarca=@IdMarca,ImagenUrl=@ImagenUrl,Precio=@precio where id=@id");
+                datos.setearParametro("@codigo", ArtChange.codigo);
+                datos.setearParametro("@nombre",ArtChange.nombre );
+                datos.setearParametro("@descripcion", ArtChange.descripcion);
+                datos.setearParametro("@IdCat",ArtChange.categoria.id );
+                datos.setearParametro("IdMarca", ArtChange.marca.id);
+                datos.setearParametro("@ImagenUrl", ArtChange.imagenUrl);
+                datos.setearParametro("@precio", ArtChange.precio);
+                datos.setearParametro("@id", ArtChange.id);
+
+             datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+
+            }
+
+        }
+
+
+
+
+
+
+
 
 
         public Articulo buscarArtCodigo(string codigo)// Si no encuentra la búsqueda, devuelve id = -1

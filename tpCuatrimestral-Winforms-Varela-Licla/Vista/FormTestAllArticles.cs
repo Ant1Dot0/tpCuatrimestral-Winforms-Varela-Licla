@@ -68,7 +68,7 @@ namespace Vista
                 listaArticulos = negocio.listar();
                 DGVAllArticles.DataSource = listaArticulos; //cargo la grilla
                 DGVAllArticles.Columns["id"].Visible=false;
-                //DGVAllArticles.Columns["imagenUrl"].Visible = false;
+                DGVAllArticles.Columns["imagenUrl"].Visible = false;
                 cargarImagen(listaArticulos[0].imagenUrl);
 
             }
