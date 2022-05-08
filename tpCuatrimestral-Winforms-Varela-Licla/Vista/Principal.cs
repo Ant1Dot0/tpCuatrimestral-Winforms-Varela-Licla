@@ -48,5 +48,11 @@ namespace Vista
            FormTestAllArticles MostrarArticulos = new FormTestAllArticles();   
             MostrarArticulos.ShowDialog();  
         }
+
+        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAgregar agregar = new FormAgregar();
+            agregar.ShowDialog();
+        }
     }
 }

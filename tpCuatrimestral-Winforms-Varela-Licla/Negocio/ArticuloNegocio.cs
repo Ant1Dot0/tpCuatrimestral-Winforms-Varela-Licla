@@ -23,21 +23,27 @@ namespace Negocio
             {
                 conexion.ConnectionString= "server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT codigo, nombre FROM ARTICULOS";
+                comando.CommandText = "SELECT a.Id as id, Codigo, Nombre, a.Descripcion dart, c.descripcion  categoria , m.descripcion  Marca, ImagenUrl, Precio " +
+                    "from ARTICULOS a, CATEGORIAS c, MARCAS m where a.IdCategoria = c.Id and a.IdMarca = m.Id";
                 comando.Connection = conexion;
 
                 conexion.Open();    
                 lector = comando.ExecuteReader();
+
                 while (lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.codigo = (string)lector["codigo"];
-                    aux.nombre = (string)lector["nombre"];
-                    //  aux.descripcion = (string)lector["descripcion"];
+                    aux.id = (int)lector["id"];
+                    aux.codigo = (string)lector["Codigo"];
+                    aux.descripcion = (string)lector["dart"];
+                    aux.nombre = (string)lector["Nombre"];
+                    aux.categoria.descripcion = (string)lector["categoria"];
+                    aux.marca.descripcion = (string)lector["Marca"];
 
-                    //  if (!(lector["imagenUrl"] is DBNull))
-                    //      aux.imagenUrl = (string)lector["imagenUrl"];
-                    //  aux.precio = (float)lector["precio"];
+                    if (!(lector["imagenUrl"] is DBNull))
+                    aux.imagenUrl = (string)lector["imagenUrl"];
+                    
+                    aux.precio = (decimal)lector["precio"];
 
                     lista.Add(aux);
 
@@ -94,6 +100,37 @@ namespace Negocio
             }
             
         }
+
+        public void agregar(Articulo nuevo)
+        {
+            AccesoaDatos datos = new AccesoaDatos();
+
+            try
+            {
+                datos.setearConsulta("Insert into ARTICULOS ( Codigo, Nombre, Descripcion,ImagenUrl, precio, idMarca, idCategoria) values (" +nuevo.codigo+ ",'"+ nuevo.nombre+"','"+ nuevo.descripcion + "','" + nuevo.imagenUrl + "','" + nuevo.precio + "', @idMarca, @idCategoria) ");
+                datos.setearParametro("@idMarca", nuevo.marca.id);
+                datos.setearParametro("@idCategoria",nuevo.categoria.id);
+
+                datos.ejecutarAccion();
+
+            
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+
+            }
+
+        }
+
+       
+
 
         public Articulo buscarArtCodigo(string codigo)// Si no encuentra la búsqueda, devuelve id = -1
         {

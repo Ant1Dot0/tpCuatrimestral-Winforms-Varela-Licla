@@ -27,15 +27,15 @@ namespace Vista
             ArticuloNegocio negocio = new ArticuloNegocio();
             listaArticulos = negocio.listar();
             DGVAllArticles.DataSource = listaArticulos;
-           // DGVAllArticles.Columns["imagenUrl"].Visible = false;
+           DGVAllArticles.Columns["imagenUrl"].Visible = false;
 
 
-            /*
+            
             try
             {
                 listaArticulos = negocio.listar();
-                DGVConsultaTodos.DataSource = negocio.listar();
-                DGVConsultaTodos.Columns["imagenUrl"].Visible = false;
+                DGVAllArticles.DataSource = negocio.listar();
+                DGVAllArticles.Columns["imagenUrl"].Visible = false;
                 cargarImagen(listaArticulos[0].imagenUrl);
             }
             catch (Exception x1)
@@ -43,7 +43,7 @@ namespace Vista
                 MessageBox.Show(x1.ToString());
                 
             }
-            */
+            
         }
 
         private void cargarImagen(string imagen)
