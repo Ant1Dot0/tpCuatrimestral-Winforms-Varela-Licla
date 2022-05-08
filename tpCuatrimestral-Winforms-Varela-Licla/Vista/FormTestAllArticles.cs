@@ -15,7 +15,7 @@ namespace Vista
 {
     public partial class FormTestAllArticles : Form
     {
-        private  List<Articulo> listaArticulos;
+        private  List<Articulo> listaArticulos;//Se carga para poder manupular la lista despues. los datos de la base estan aca 
 
         public FormTestAllArticles()
         {
@@ -24,29 +24,10 @@ namespace Vista
 
         private void frmConsultaTodosLoad(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulos = negocio.listar();
-            DGVAllArticles.DataSource = listaArticulos;
-           DGVAllArticles.Columns["imagenUrl"].Visible = false;
 
-
-            
-            try
-            {
-                listaArticulos = negocio.listar();
-                DGVAllArticles.DataSource = negocio.listar();
-                DGVAllArticles.Columns["imagenUrl"].Visible = false;
-                cargarImagen(listaArticulos[0].imagenUrl);
-            }
-            catch (Exception x1)
-            {
-                MessageBox.Show(x1.ToString());
-                
-            }
-            
         }
 
-        private void cargarImagen(string imagen)
+        private void cargarImagen(string imagen) //si la imagen falla entonces muestra imagen x defecto
         {
             try
             {
@@ -61,8 +42,27 @@ namespace Vista
         private void FormTestAllArticles_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulos = negocio.listar();
-            DGVAllArticles.DataSource = listaArticulos;
+
+            try
+            {
+                listaArticulos = negocio.listar();
+                DGVAllArticles.DataSource = listaArticulos; //cargo la grilla
+                //DGVAllArticles.Columns["imageUrl"].Visible=false;
+                cargarImagen(listaArticulos[0].imagenUrl);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+            
+        }
+
+        private void DGVAllArticles_SelectionChanged(object sender, EventArgs e) //en cada seleccion actualiza la imagen
+        {
+           Articulo seleccionado = (Articulo)DGVAllArticles.CurrentRow.DataBoundItem; // de la fila actual obtiene el obj enlazado. devuelve obj.
+           cargarImagen(seleccionado.imagenUrl);
         }
     }
 }

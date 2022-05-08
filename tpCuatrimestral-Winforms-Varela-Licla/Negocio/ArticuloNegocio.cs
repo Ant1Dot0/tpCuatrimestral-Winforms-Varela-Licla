@@ -40,7 +40,7 @@ namespace Negocio
                     aux.categoria.descripcion = (string)lector["categoria"];
                     aux.marca.descripcion = (string)lector["Marca"];
 
-                    if (!(lector["imagenUrl"] is DBNull))
+                    if (!(lector["imagenUrl"] is DBNull))  // control de nulidad
                     aux.imagenUrl = (string)lector["imagenUrl"];
                     
                     aux.precio = (decimal)lector["precio"];
