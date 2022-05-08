@@ -59,10 +59,46 @@ namespace Vista
             
         }
 
+        private void cargar()
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                listaArticulos = negocio.listar();
+                DGVAllArticles.DataSource = listaArticulos; //cargo la grilla
+                //DGVAllArticles.Columns["imageUrl"].Visible=false;
+                cargarImagen(listaArticulos[0].imagenUrl);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
         private void DGVAllArticles_SelectionChanged(object sender, EventArgs e) //en cada seleccion actualiza la imagen
         {
            Articulo seleccionado = (Articulo)DGVAllArticles.CurrentRow.DataBoundItem; // de la fila actual obtiene el obj enlazado. devuelve obj.
            cargarImagen(seleccionado.imagenUrl);
+        }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)DGVAllArticles.CurrentRow.DataBoundItem;
+
+            FormAgregar agregar = new FormAgregar();
+            agregar.ShowDialog();
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            FormAgregar agregar = new FormAgregar();
+            agregar.ShowDialog();
+            cargar();
         }
     }
 }
