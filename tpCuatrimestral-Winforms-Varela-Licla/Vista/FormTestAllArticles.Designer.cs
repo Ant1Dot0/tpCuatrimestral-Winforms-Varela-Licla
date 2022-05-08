@@ -32,6 +32,7 @@
             this.PBXAllArticles = new System.Windows.Forms.PictureBox();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
+            this.BtnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVAllArticles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBXAllArticles)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +64,7 @@
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(172, 546);
+            this.BtnModificar.Location = new System.Drawing.Point(151, 546);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(75, 23);
             this.BtnModificar.TabIndex = 2;
@@ -81,11 +82,22 @@
             this.BtnAgregar.UseVisualStyleBackColor = true;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.Location = new System.Drawing.Point(251, 546);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.BtnEliminar.TabIndex = 4;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.UseVisualStyleBackColor = true;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
             // FormTestAllArticles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1545, 603);
+            this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.PBXAllArticles);
@@ -106,5 +118,6 @@
         private System.Windows.Forms.PictureBox PBXAllArticles;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnAgregar;
+        private System.Windows.Forms.Button BtnEliminar;
     }
 }

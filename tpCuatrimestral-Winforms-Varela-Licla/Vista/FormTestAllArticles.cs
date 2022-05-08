@@ -93,6 +93,7 @@ namespace Vista
 
             FormAgregar modificar = new FormAgregar(seleccionado); // le paso el reg. seleccionado al constructor
             modificar.ShowDialog();
+            cargar();
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -100,6 +101,28 @@ namespace Vista
             FormAgregar agregar = new FormAgregar();
             agregar.ShowDialog();
             cargar();
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio= new ArticuloNegocio();
+            Articulo seleccionado; //art a eliminar
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("Esta seguro de eliminar el registro?","Eliminando",MessageBoxButtons.YesNo,MessageBoxIcon.Warning); // Confirmacion de eliminacion
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)DGVAllArticles.CurrentRow.DataBoundItem;
+                    negocio.eliminar(seleccionado.id);
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
