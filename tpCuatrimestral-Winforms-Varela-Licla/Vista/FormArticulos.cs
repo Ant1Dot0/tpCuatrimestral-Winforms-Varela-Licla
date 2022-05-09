@@ -13,11 +13,11 @@ using Negocio;
 
 namespace Vista
 {
-    public partial class FormTestAllArticles : Form
+    public partial class FormArticulos : Form
     {
         private  List<Articulo> listaArticulos;//Se carga para poder manupular la lista despues. los datos de la base estan aca 
 
-        public FormTestAllArticles()
+        public FormArticulos()
         {
             InitializeComponent();
         }
@@ -49,6 +49,8 @@ namespace Vista
                 DGVAllArticles.DataSource = listaArticulos; //cargo la grilla
                 //DGVAllArticles.Columns["imageUrl"].Visible=false;
                 cargarImagen(listaArticulos[0].imagenUrl);
+                DGVAllArticles.Columns["Id"].Visible = false;
+                DGVAllArticles.Columns["ImagenUrl"].Visible = false;
 
             }
             catch (Exception ex)

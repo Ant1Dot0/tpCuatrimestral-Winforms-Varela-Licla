@@ -14,25 +14,15 @@ namespace Vista
 {
     public partial class FormDetalle : Form
     {
+        private Articulo articulo = null;
         public FormDetalle()
         {
             InitializeComponent();
         }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
+        public FormDetalle(Articulo articulo)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            Articulo articulo = new Articulo();
-            articulo = negocio.buscarArtCodigo(txbCodigo.Text);
-
-            txtCodigo.Text = articulo.codigo;
-            txtNombre.Text = articulo.nombre;
-            txtDescripcion.Text = articulo.descripcion; 
-            txtCategoria.Text = "" + articulo.categoria;
-            txtMarca.Text = "" + articulo.marca;
-            txtPrecio.Text = "" + articulo.precio;
-
-            cargarImagen(articulo.imagenUrl);
+            InitializeComponent();
+            this.articulo = articulo;
         }
 
         private void cargarImagen(string imagen)
@@ -46,6 +36,23 @@ namespace Vista
 
                 pbxArticulo.Load("https://educacionprivada.org/wp-content/plugins/all-in-one-video-gallery/public/assets/images/placeholder-image.png");
             }
+        }
+
+        private void FormDetalle_Load(object sender, EventArgs e)
+        {
+            txtCodigo.Text = articulo.codigo;
+            txtNombre.Text = articulo.nombre;
+            txtDescripcion.Text = articulo.descripcion;
+            txtCategoria.Text = "" + articulo.categoria;
+            txtMarca.Text = "" + articulo.marca;
+            txtPrecio.Text = "" + articulo.precio;
+
+            cargarImagen(articulo.imagenUrl);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

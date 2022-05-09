@@ -45,7 +45,7 @@ namespace Vista
 
         private void tESTMOSTRARDATOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           FormTestAllArticles MostrarArticulos = new FormTestAllArticles();   
+           FormArticulos MostrarArticulos = new FormArticulos();   
             MostrarArticulos.ShowDialog();  
         }
 
@@ -53,6 +53,12 @@ namespace Vista
         {
             FormAgregar agregar = new FormAgregar();
             agregar.ShowDialog();
+        }
+
+        private void altaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormArticulos MostrarArticulos = new FormArticulos();
+            MostrarArticulos.ShowDialog();
         }
     }
 }

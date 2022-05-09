@@ -39,6 +39,9 @@ namespace Vista
             this.lblCriterio = new System.Windows.Forms.Label();
             this.cbxFiltro = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnVerDetalle = new System.Windows.Forms.Button();
+            this.btnVerTodo = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +67,8 @@ namespace Vista
             // 
             // dgvArticulos
             // 
+            this.dgvArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvArticulos.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -71,9 +76,11 @@ namespace Vista
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.Size = new System.Drawing.Size(665, 208);
             this.dgvArticulos.TabIndex = 4;
+            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // cbxCampo
             // 
+            this.cbxCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCampo.FormattingEnabled = true;
             this.cbxCampo.Location = new System.Drawing.Point(87, 53);
             this.cbxCampo.Name = "cbxCampo";
@@ -83,19 +90,20 @@ namespace Vista
             // 
             // cbxCriterio
             // 
+            this.cbxCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCriterio.FormattingEnabled = true;
-            this.cbxCriterio.Location = new System.Drawing.Point(300, 53);
+            this.cbxCriterio.Location = new System.Drawing.Point(289, 52);
             this.cbxCriterio.Name = "cbxCriterio";
             this.cbxCriterio.Size = new System.Drawing.Size(121, 21);
             this.cbxCriterio.TabIndex = 7;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(655, 51);
+            this.btnBuscar.Location = new System.Drawing.Point(602, 52);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(59, 23);
             this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -111,7 +119,7 @@ namespace Vista
             // lblCriterio
             // 
             this.lblCriterio.AutoSize = true;
-            this.lblCriterio.Location = new System.Drawing.Point(259, 56);
+            this.lblCriterio.Location = new System.Drawing.Point(244, 56);
             this.lblCriterio.Name = "lblCriterio";
             this.lblCriterio.Size = new System.Drawing.Size(39, 13);
             this.lblCriterio.TabIndex = 11;
@@ -120,7 +128,7 @@ namespace Vista
             // cbxFiltro
             // 
             this.cbxFiltro.AutoSize = true;
-            this.cbxFiltro.Location = new System.Drawing.Point(452, 56);
+            this.cbxFiltro.Location = new System.Drawing.Point(442, 54);
             this.cbxFiltro.Name = "cbxFiltro";
             this.cbxFiltro.Size = new System.Drawing.Size(29, 13);
             this.cbxFiltro.TabIndex = 12;
@@ -128,16 +136,49 @@ namespace Vista
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(487, 54);
+            this.textBox1.Location = new System.Drawing.Point(475, 53);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 13;
+            // 
+            // btnVerDetalle
+            // 
+            this.btnVerDetalle.Location = new System.Drawing.Point(733, 52);
+            this.btnVerDetalle.Name = "btnVerDetalle";
+            this.btnVerDetalle.Size = new System.Drawing.Size(67, 23);
+            this.btnVerDetalle.TabIndex = 14;
+            this.btnVerDetalle.Text = "Ver Detalle";
+            this.btnVerDetalle.UseVisualStyleBackColor = true;
+            this.btnVerDetalle.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnVerTodo
+            // 
+            this.btnVerTodo.Location = new System.Drawing.Point(667, 52);
+            this.btnVerTodo.Name = "btnVerTodo";
+            this.btnVerTodo.Size = new System.Drawing.Size(60, 23);
+            this.btnVerTodo.TabIndex = 15;
+            this.btnVerTodo.Text = "Ver Todo";
+            this.btnVerTodo.UseVisualStyleBackColor = true;
+            this.btnVerTodo.Click += new System.EventHandler(this.btnVerTodo_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(846, 53);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(59, 23);
+            this.btnCancelar.TabIndex = 16;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FormBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 340);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnVerTodo);
+            this.Controls.Add(this.btnVerDetalle);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cbxFiltro);
             this.Controls.Add(this.lblCriterio);
@@ -169,5 +210,8 @@ namespace Vista
         private System.Windows.Forms.Label lblCriterio;
         private System.Windows.Forms.Label cbxFiltro;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnVerDetalle;
+        private System.Windows.Forms.Button btnVerTodo;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
