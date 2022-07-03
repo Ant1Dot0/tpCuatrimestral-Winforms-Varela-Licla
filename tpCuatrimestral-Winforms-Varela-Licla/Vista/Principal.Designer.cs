@@ -31,9 +31,9 @@ namespace Vista
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.accionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,13 @@ namespace Vista
             this.accionesToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.accionesToolStripMenuItem.Text = "Altas";
             // 
+            // altaToolStripMenuItem1
+            // 
+            this.altaToolStripMenuItem1.Name = "altaToolStripMenuItem1";
+            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.altaToolStripMenuItem1.Text = "Artículo";
+            this.altaToolStripMenuItem1.Click += new System.EventHandler(this.altaToolStripMenuItem1_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -69,16 +76,9 @@ namespace Vista
             // buscarArticuloToolStripMenuItem
             // 
             this.buscarArticuloToolStripMenuItem.Name = "buscarArticuloToolStripMenuItem";
-            this.buscarArticuloToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.buscarArticuloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.buscarArticuloToolStripMenuItem.Text = "Ver Articulos";
             this.buscarArticuloToolStripMenuItem.Click += new System.EventHandler(this.buscarArticuloToolStripMenuItem_Click);
-            // 
-            // altaToolStripMenuItem1
-            // 
-            this.altaToolStripMenuItem1.Name = "altaToolStripMenuItem1";
-            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.altaToolStripMenuItem1.Text = "Artículo";
-            this.altaToolStripMenuItem1.Click += new System.EventHandler(this.altaToolStripMenuItem1_Click);
             // 
             // Principal
             // 
@@ -88,7 +88,7 @@ namespace Vista
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Principal";
-            this.Text = "Form1";
+            this.Text = "GestionAR";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
